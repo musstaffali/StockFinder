@@ -7,13 +7,14 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
 <body>
     <section class="hero">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
+                <h1 class="title is-1">
                     WHAT THE STOCK?
                 </h1>
                 <h4 class="subtitle">
@@ -63,20 +64,20 @@
                 This is the purpose of our page!
             </p>
             <div class=row>
-                <div class="columns">
-            <input class="input is-primary" type="text" placeholder="Search for a company or industry"><button class="button is-primary">
+                <div class="level">
+                    <input class="input is-primary" type="text" placeholder="Search for a company or industry"><button
+                        class="button is-primary">
 
-                <i class="fas fa-search"></i>
-            </button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
-            </div>
-            <br>
             <br>
             <div class="columns">
                 <div class="column">
-                    <h2 class="subtitle">Top Trending</h2>
+                    <h2 class="subtitle is-3">Today's Top Trending</h2>
                     <table id="table-1" class="table is-striped is-bordered is-fullwidth is-hoverable">
-                        
+
                         <thead>
                             <tr>
                                 <th title="Header">Rank</th>
@@ -90,7 +91,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>1</th>
+                                <th>1
+                                    <i class="far fa-star"></i>
+                                </th>
                                 <td><a href="">Company 1</a>
                                 </td>
                                 <td>x</td>
@@ -127,7 +130,8 @@
                     </table>
                 </div>
                 <div class="column">
-                    <h2 class="subtitle">My Favorites</h2>
+                    <h2 class="subtitle is-3">My Favorited Stocks</h2>
+
                     <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
                         <thead>
                             <tr>
@@ -142,14 +146,18 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>1</th>
+                                <th>1
+                                    <i class="fas fa-star"></i>
+                                </th>
                                 <td><a href="">Company 1</a>
                                 </td>
                                 <td>x</td>
                                 <td>x</td>
                             </tr>
                             <tr>
-                                <th>2</th>
+                                <th>2
+                                    <i class="fas fa-star"></i>
+                                </th>
                                 <td><a href="">Company 2</a>
                                 </td>
                                 <td>x</td>
@@ -179,12 +187,9 @@
                     </table>
                 </div>
             </div>
-
-            <!-- </div> -->
-
-            <!-- </div> -->
         </div>
     </section>
+    <script type="javascript" src="homepage.js"></script>
 </body>
 
 </html>
