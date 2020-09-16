@@ -1,0 +1,21 @@
+/* the other files will be linked to this one */
+
+html {
+    Background-color: lightblue;
+}
+
+#indusSearch {
+    background-color: greenyellow;
+    margin: 20px;
+    text-align: left;
+    }
+    
+#industryStock {
+    margin: 10px;
+   
+    text-align: left;
+}
+
+#submitBtn {
+    margin: 5px;
+}
