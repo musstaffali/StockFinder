@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Industry</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
 
@@ -22,62 +22,44 @@
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
+            <strong><div class="navbar-start">
                 <a class="navbar-item">
                     Home
                 </a>
-
                 <a class="navbar-item">
-                    Documentation
+                    Results
                 </a>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                            About
-                        </a>
-                        <a class="navbar-item">
-                            Jobs
-                        </a>
-                        <a class="navbar-item">
-                            Contact
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
-                    </div>
-                </div>
-            </div>
+                <a class="navbar-item">
+                    Industry
+                </a>
+                <a class="navbar-item">
+                    Resources
+                </a>
+            </div></strong>
         </div>
     </nav>
-    <section class="section">
-        <div class="container">
-            <h1 class="title">
-                Hello World
-            </h1>
-            <p class="subtitle">
-                My first website with <strong>Bulma</strong>!
-            </p>
-        </div>
-    </section>
+ 
+    <!-- not sure if doing this right!!! -->
+
+    <!-- user will type in the input box, where stated "Type Here" and the user will click submit button -->
+
+<!-- will try and set up ajax so that when submit button is clicked the search to look for stocks with in the industry and stock information from the API will be sent to the user -->
+<div class="container">
+    <form action="StocksOfIndus">
+        <label for="IndustryStock"><strong>Industries & Stocks</strong></label><br>
+        <input type="text" id="IndustryStock" name="IndustryStock" value="Type Here"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    
+    <!-- trying to make this "<div id="Indus&Stock"><ul></ul></div>""
+where the user would see the different stocks of that industry -->
+
+    <!-- what exactly did we want the user to be able to do when clicking on the different stocks? 1.) display more in depth stock information about the industry or 2.) information about the industry itself  -->
+    <div id="Indus&Stock"><ul></ul></div>
+
+    <!-- will be using Jquery -->
 </body>
 
 </html>
