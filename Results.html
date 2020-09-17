@@ -23,94 +23,123 @@
             </a>
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
-            <strong><div class="navbar-start">
-                <a class="navbar-item">
-                    Home
-                </a>
-                <a class="navbar-item">
-                    Results
-                </a>
-                <a class="navbar-item">
-                    Industry
-                </a>
-                <a class="navbar-item">
-                    Resources
-                </a>
-            </div></strong>
+            <strong>
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+                    <a class="navbar-item">
+                        Results
+                    </a>
+                    <a class="navbar-item">
+                        Industry
+                    </a>
+                    <a class="navbar-item">
+                        Resources
+                    </a>
+                </div>
+            </strong>
         </div>
     </nav>
 
     <!--side bar-->
     <style>
-        body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-        .w3-row-padding img {margin-bottom: 12px}
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
         /* Set the width of the sidebar to 120px */
-        .w3-sidebar {width: 180px;background:lightgrey;}
+        .w3-sidebar {
+            width: 180px;
+            background: lightgrey;
+        }
+
         /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-        #main {margin-left: 120px}
+        #main {
+            margin-left: 120px
+        }
+
         /* Remove margins from "page content" on small screens */
-        @media only screen and (max-width: 600px)  {#main {margin-left: 0}}
-        </style>
-        <body class="w3-black">
-            
-        
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+    </style>
+
+    <body class="w3-black">
+
+
         <!-- right side/search bar company -->
         <div class="columns">
             <div class="column is-one-quarter">
-        <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-          <div class="row">
-            <nav  class="col-12 col-md-3 bg-light" id="time&date">      
-                <form class="input-group mb-3">
-                    <input type="text" class="form-control inputcity" aria-label="Search" placeholder="search by Company" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <input class="btn btn-outline-secondary search" type="submit" value="submit"></input>
-                    </div>
-                </form>
-                <div class="error-message"></div>
-                <div class="list-group citylist"></div>
-    
-                <p class=""></p>
-                <p class=""></p>
-                <p class=""></p>
-            </nav>
-        </nav>
+                <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+                    <div class="row">
+                        <nav class="col-12 col-md-3 bg-light" id="time&date">
+                            <form class="input-group mb-3">
+                                <input type="text" class="form-control inputcity" aria-label="Search"
+                                    placeholder="search by Company" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <input class="btn btn-outline-secondary search" type="submit"
+                                        value="submit"></input>
+                                </div>
+                            </form>
+                            <div class="error-message"></div>
+                            <div class="list-group citylist"></div>
 
-                
-            
-            <!-- Icon Bar (Sidebar - hidden on small screens) -->
-            <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-              <!-- Avatar image in top left corner -->
-            <div class="row">
- 
-                    <!-- Search by industry search bar -->
-                    <form class="input-group mb-3">
-                        <input type="text" class="form-control inputcity" aria-label="Search" placeholder="search by Industry" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                          <input class="btn btn-outline-secondary search" type="submit" value="submit"></input>
-                        </div>
-                    </form>
-                    <div class="error-message"></div>
-                    <div class="list-group citylist"></div>
-        
-                    <p class=""></p>
-                    <p class=""></p>
-                    <p class=""></p>
+                            <p class=""></p>
+                            <p class=""></p>
+                            <p class=""></p>
+                        </nav>
                 </nav>
-        </div>
-        <!-- middle column-->
-        <div class="column is-half">
-            <h1 class="container" >Results</h1>        
-        </div>
 
-                <!-- Right side of the screen/trending -->
-                <div class="column is-one-quarter">
-                    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-                        <div class="row">
-                          <nav  class="col-12 col-md-3 bg-light" id="time&date">      
-                              <form class="input-group mb-3">
+
+
+                <!-- Icon Bar (Sidebar - hidden on small screens) -->
+                <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+                    <!-- Avatar image in top left corner -->
+                    <div class="row">
+
+                        <!-- Search by industry search bar -->
+                        <form class="input-group mb-3">
+                            <input type="text" class="form-control inputcity" aria-label="Search"
+                                placeholder="search by Industry" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <input class="btn btn-outline-secondary search" type="submit" value="submit"></input>
+                            </div>
+                        </form>
+                        <div class="error-message"></div>
+                        <div class="list-group citylist"></div>
+
+                        <p class=""></p>
+                        <p class=""></p>
+                        <p class=""></p>
+                </nav>
+            </div>
+            <!-- middle column-->
+            <div class="column is-half">
+                <h1 class="container">Results</h1>
+            </div>
+
+            <!-- Right side of the screen/trending -->
+            <div class="column is-one-quarter">
+                <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+                    <div class="row">
+                        <nav class="col-12 col-md-3 bg-light" id="time&date">
+                            <form class="input-group mb-3">
                                 <div class="column">
                                     <h2 class="subtitle is-3">My Favorited Stocks</h2>
-               
+
                                     <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
                                         <thead>
                                             <tr>
@@ -165,80 +194,80 @@
                                             </tr>
                                     </table>
                                 </div>
-                          </nav>
-                      </nav>
-              
-                              
-                          
-                          <!-- Icon Bar (Sidebar - hidden on small screens) -->
-                          <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-                            <!-- Avatar image in top left corner -->
-                          <div class="row">
-               
-                                  <!-- Search by industry search bar -->
-                                  <form class="input-group mb-3">
-                                    <h2 class="subtitle is-3">Today's Top Trending</h2>
-                                    <table id="table-1" class="table is-striped is-bordered is-fullwidth is-hoverable">
-               
-                                        <thead>
-                                            <tr>
-                                                <th title="Header">Rank</th>
-                                                <th>Company</th>
-                                                <th>Value</th>
-                                                <th title="UpDown">
-                                                    <i class="fas fa-sort-amount-up"></i>
-                                                    <i class="fas fa-sort-amount-down"></i>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1
-                                                    <i class="far fa-star"></i>
-                                                </th>
-                                                <td><a href="">Company 1</a>
-                                                </td>
-                                                <td>x</td>
-                                                <td>x</td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td><a href="">Company 2</a>
-                                                </td>
-                                                <td>x</td>
-                                                <td>x</td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td><a href="">Company 3</a>
-                                                </td>
-                                                <td>x</td>
-                                                <td>x</td>
-                                            </tr>
-                                            <tr>
-                                                <th>4</th>
-                                                <td><a href="">Company 4</a>
-                                                </td>
-                                                <td>x</td>
-                                                <td>x</td>
-                                            </tr>
-                                            <tr>
-                                                <th>5</th>
-                                                <td><a href="">Company 5</a>
-                                                </td>
-                                                <td>x</td>
-                                                <td>x</td>
-                                            </tr>
-                                    </table>
-                                </div>
-                              </nav>
-                            
-                      </div>
+                        </nav>
+                </nav>
+
+
+
+                <!-- Icon Bar (Sidebar - hidden on small screens) -->
+                <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+                    <!-- Avatar image in top left corner -->
+                    <div class="row">
+
+                        <!-- Search by industry search bar -->
+                        <form class="input-group mb-3">
+                            <h2 class="subtitle is-3">Today's Top Trending</h2>
+                            <table id="table-1" class="table is-striped is-bordered is-fullwidth is-hoverable">
+
+                                <thead>
+                                    <tr>
+                                        <th title="Header">Rank</th>
+                                        <th>Company</th>
+                                        <th>Value</th>
+                                        <th title="UpDown">
+                                            <i class="fas fa-sort-amount-up"></i>
+                                            <i class="fas fa-sort-amount-down"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1
+                                            <i class="far fa-star"></i>
+                                        </th>
+                                        <td><a href="">Company 1</a>
+                                        </td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td><a href="">Company 2</a>
+                                        </td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td><a href="">Company 3</a>
+                                        </td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <td><a href="">Company 4</a>
+                                        </td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <td><a href="">Company 5</a>
+                                        </td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                    </tr>
+                            </table>
                     </div>
-                      
-        
-                
-            
-</body>
+                </nav>
+
+            </div>
+        </div>
+
+
+
+
+    </body>
 
 </html>
