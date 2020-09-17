@@ -46,7 +46,14 @@ function getTopTrending() {
         $("#change5").text(topTrendstop10[4].change);
         $("#upDown5").text((topTrendstop10[4].changePercent * 100).toFixed(2) + "%");
 
-    })
+       var upDownC = $(".changes").val();
+        if (upDownC >= 0) {
+            $(".upDownPct").css("color", "green");
+        } else {
+            $(".upDownPct").css("color", "red");
+        }
+
+    });
 }
 getTopTrending();
 
@@ -59,11 +66,8 @@ $(".button").on("click", function (event) {
         .toLowerCase();
     $("#searchTerm").val("");
     console.log(searchTerm);
-    // var searchString = JSON.stringify(searchTerm.value);
-    // console.log(searchString);
+
     getStocks(searchTerm);
-    // getStockCompany(symbol);
-    // $("#searchTerm").val("");
 
 })
 
@@ -78,6 +82,7 @@ function getStocks(searchTerm) {
         console.log(data.bestMatches[0]);
         var symbol = data.bestMatches[0]["1. symbol"];
         console.log(symbol);
+        localStorage.saveName = JSON.stringify(data.bestMatches[0]);
 
         var symbol = data.bestMatches[0]["1. symbol"];
         var queryCompanyURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&apikey=LMLYK2TEYEV7H4G5";
@@ -89,19 +94,19 @@ function getStocks(searchTerm) {
                 console.log(results);
                 console.log(results["Global Quote"]["05. price"]);
                 console.log(results["Global Quote"]["09. change"]);
+
+                //save company name and global quote
+                localStorage.saveData = JSON.stringify(results);
+                location.href = "results.html";
             }
         });
+        
     })
+    
 };
 
-function getStockCompamy(symbol) {
 
-}
-
-
-
-
-
+//When a blank star is clicked, the data will be moved to the favorites table and appended
 favorited();
 
 
