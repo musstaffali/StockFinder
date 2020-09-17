@@ -7,7 +7,6 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
 <body>
@@ -38,16 +37,16 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <strong>
                 <div class="navbar-start">
-                    <a class="navbar-item">
+                    <a class="navbar-item is-active" href="homepage.html">
                         Home
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="Results.html">
                         Results
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="industry.html">
                         Industry
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item" href="resources.html">
                         Resources
                     </a>
                 </div>
@@ -57,7 +56,7 @@
     <!--END NAV BAR-->
     <section class="section">
         <div class="container">
-            <h1 class="title">
+            <h1 class="title" id="#about">
                 ABOUT
             </h1>
             <p class="subtitle">
@@ -65,9 +64,8 @@
             </p>
             <div class=row>
                 <div class="level">
-                    <input class="input is-primary" type="text" placeholder="Search for a company or industry"><button
-                        class="button is-primary">
-
+                    <input id="searchTerm" class="input is-primary" type="text" placeholder="Search for a company or industry">
+                    <button id="#search-button"class="button is-primary">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -82,52 +80,69 @@
                             <tr>
                                 <th title="Header">Rank</th>
                                 <th>Company</th>
-                                <th>Value</th>
+                                <th>Symbol</th>
+                                <th>Price</tn>
+                                <th>Change</th>
                                 <th title="UpDown">
                                     <i class="fas fa-sort-amount-up"></i>
                                     <i class="fas fa-sort-amount-down"></i>
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="trendBody">
+                            <tr id="row-1">
                                 <th>1
-                                    <i class="far fa-star"></i>
+                                    <i id="star-rank-1" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                            
                                 </th>
-                                <td><a href="">Company 1</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
+                                <td id="compName1"></td>
+                                <td id="compSymb1"></td>
+                                <td id="price1"></td>
+                                <td id="change1" class="changes"></td>
+                                <td id="upDown1" class="upDownPct"></td>
                             </tr>
                             <tr>
-                                <th>2</th>
-                                <td><a href="">Company 2</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
+                                <th>2
+                                    <i id="star-rank-2" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName2"></td>
+                                <td id="compSymb2"></td>
+                                <td id="price2"></td>
+                                <td id="change2" class="changes"></td>
+                                <td id="upDown2" class="upDownPct"></td>
                             </tr>
                             <tr>
-                                <th>3</th>
-                                <td><a href="">Company 3</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
+                                <th>3
+                                    <i id="star-rank-3" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName3"></td>
+                                <td id="compSymb3"></td>
+                                <td id="price3"></td>
+                                <td id="change3" class="changes"></td>
+                                <td id="upDown3" class="upDownPct"></td>
                             </tr>
                             <tr>
-                                <th>4</th>
-                                <td><a href="">Company 4</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
+                                <th>4
+                                    <i id="star-rank-4" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName4"></td>
+                                <td id="compSymb4"></td>
+                                <td id="price4"></td>
+                                <td id="change4" class="changes"></td>
+                                <td id="upDown4" class="upDownPct"></td>
                             </tr>
                             <tr>
-                                <th>5</th>
-                                <td><a href="">Company 5</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
+                                <th>5
+                                    <i id="star-rank-5" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName5"></td>
+                                <td id="compSymb5"></td>
+                                <td id="price5"></td>
+                                <td id="change5" class="changes"></td>
+                                <td id="upDown5" class="upDownPct"></td>
                             </tr>
                     </table>
+                    <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
                 </div>
                 <div class="column">
                     <h2 class="subtitle is-3">My Favorited Stocks</h2>
@@ -144,52 +159,17 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th>1
-                                    <i class="fas fa-star"></i>
-                                </th>
-                                <td><a href="">Company 1</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
-                            <tr>
-                                <th>2
-                                    <i class="fas fa-star"></i>
-                                </th>
-                                <td><a href="">Company 2</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td><a href="">Company 3</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td><a href="">Company 4</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
-                            <tr>
-                                <th>5</th>
-                                <td><a href="">Company 5</a>
-                                </td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
-                    </table>
+                        <tbody id="faveTable">
+
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
     </section>
-    <script type="javascript" src="homepage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="homepage.js"></script>
+    
 </body>
 
 </html>
