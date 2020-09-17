@@ -19,3 +19,8 @@ html {
 #submitBtn {
     margin: 5px;
 }
+
+#termsMenu h3 {
+    font-size: 110%;
+    font-weight: 500;
+}
