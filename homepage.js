@@ -46,7 +46,7 @@ function getTopTrending() {
         $("#change5").text(topTrendstop10[4].change);
         $("#upDown5").text((topTrendstop10[4].changePercent * 100).toFixed(2) + "%");
 
-       var upDownC = $(".changes").val();
+        var upDownC = $(".changes").val();
         if (upDownC >= 0) {
             $(".upDownPct").css("color", "green");
         } else {
@@ -100,9 +100,9 @@ function getStocks(searchTerm) {
                 location.href = "results.html";
             }
         });
-        
+
     })
-    
+
 };
 
 
@@ -116,17 +116,18 @@ function favorited() {
         event.preventDefault();
 
 
-        // for(i = 0; i < favorites.length; i++) {
+        for (i = 0; i < 5; i++) {
 
-        // }
-        var cellRank = $("<td>").append("1 " + "<i class='fas fa-star'</i>");
-        var cellCompany = $("<td>").text("");
-        var cellValue = $("<td>").text("");
-        var upDown = $("<td>").text("");
-        var tableRow = $("<tr>");
-        var tableBody = $("#faveTable");
-        tableRow.append(cellRank, cellCompany, cellValue, upDown);
-        tableBody.append(tableRow);
+            var cellRank = $("<td>").append(i++ + "<i class='fas fa-star'</i>");
+            var cellCompany = $("<td>").text("");
+            var cellValue = $("<td>").text("");
+            var upDown = $("<td>").text("");
+            var tableRow = $("<tr>");
+            var tableBody = $("#faveTable");
+            tableRow.append(cellRank, cellCompany, cellValue, upDown);
+            tableBody.append(tableRow);
+        }
 
-    })
+
+    });
 }
