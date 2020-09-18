@@ -10,9 +10,20 @@
 </head>
 
 <body>
-    <div class="title is-1 is-spaced" id="pageTitle">What the Stock?</div>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
+            <span>
+                <h1 class="title" id="pageTitle">
+                    WHAT THE STOCK?
+                </h1>
+            </span>
+        </div>
+        <div class="navbar-item">
+            <span>
+                <h4 class="title" id="subtitle">
+                    All about stocks
+                </h4>
+            </span>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -20,35 +31,33 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <strong>
-                <div class="navbar-start">
-                    <a class="navbar-item is-active">
-                        Home
-                    </a>
-                    <a class="navbar-item is-active">
-                        Results
-                    </a>
-                    <a class="navbar-item is-active">
-                        Company
-                    </a>
-                    <a class="navbar-item is-active">
-                        Resources
-                    </a>
-                </div>
-            </strong>
+        <div class="navbar-end">
+            <div id="navbarWhatTheStock" class="navbar-menu">
+                <strong>
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="homepage.html">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="Results.html">
+                            Results
+                        </a>
+                        <a class="navbar-item is-active" href="industry.html">
+                            Industry
+                        </a>
+                        <a class="navbar-item" href="resources.html">
+                            Resources
+                        </a>
+                    </div>
+                </strong>
+            </div>
         </div>
     </nav>
-
-    <!-- not sure if doing this right!!! -->
-
-    <!-- user will type in the input box,  and the user will click submit button -->
+      <!-- user will type in the input box,  and the user will click submit button -->
 
     <!-- will try and set up ajax so that when submit button is clicked the search to look for stocks with in the industry and stock information from the API will be sent to the user -->
     <div id="companyFin" class="container">
         <form action="companies">
-            <label for="companySearch"><strong>Company Info:</strong></label><br>
+            <label for="companySearch"><strong>Stay in the Know!</strong></label><br>
             <input type="text" id="companySearch" name="companySearch"><br>
             <input type="submit" id="submitBtn">
         </form>
@@ -60,12 +69,13 @@ where the user would see the different stocks of that industry -->
 
     <!-- what exactly did we want the user to be able to do when clicking on the different stocks? 1.) display more in depth stock information about the industry or 2.) information about the industry itself  -->
     <div id="companyList">
+        <h1 id="title">IN THE NEWS!</h1>
         <ul></ul>
     </div>
-    
+
 
     <!-- will be using Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
     <script src="company.js"></script>
 </body>

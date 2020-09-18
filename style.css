@@ -24,3 +24,32 @@ html {
     font-size: 110%;
     font-weight: 500;
 }
+.navbar-brand h1 {
+    font-size: 300%;
+    font-weight: 500;
+}
+.navbar-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.navbar-item {
+    margin-left: 10px;
+}
+
+.navbar-brand h1 {
+    font-size: 300%;
+    font-weight: 500;
+}
+.navbar-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; 
+}
+.navbar-item {
+    margin-left: 10px;
+}
+
+#list-item {
+    font-size: 20px;
+    font-weight: 500;
+}
