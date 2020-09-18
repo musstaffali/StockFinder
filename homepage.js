@@ -11,13 +11,22 @@ function getTopTrending() {
         method: "GET"
     }).then(function (topTrendstop10) {
         console.log(topTrendstop10);
+
+        var tagName = document.getElementsByTagName("tr");
+        var i;
+        for (i=0; i<tagName.length; i++){
+            (i+1)+tagName[i].rowIndex
+            console.log("The Index of Row"+(i+1)+" is:"+tagName[i].rowIndex);
+        };
+
         
-        var topArrays = 
-        [{compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        {compName:"John", compSymbol:"Doe", price:50, change:"blue"},];
+        
+        // var topArrays = 
+        // [{compName:"John", compSymbol:"Doe", price:50, change:"blue"},
+        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
+        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
+        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
+        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"}];
         //TOP TRENDING COL 1
         
         $("#compName1").text(topTrendstop10[0].companyName);
