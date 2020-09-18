@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Industry</title>
+    <title>Company Info</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,34 +24,34 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <strong>
                 <div class="navbar-start">
-                    <a class="navbar-item">
+                    <a class="navbar-item is-active">
                         Home
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item is-active">
                         Results
                     </a>
-                    <a class="navbar-item">
-                        Industry
+                    <a class="navbar-item is-active">
+                        Company
                     </a>
-                    <a class="navbar-item">
+                    <a class="navbar-item is-active">
                         Resources
                     </a>
                 </div>
             </strong>
         </div>
     </nav>
- 
+
     <!-- not sure if doing this right!!! -->
 
     <!-- user will type in the input box,  and the user will click submit button -->
 
-<!-- will try and set up ajax so that when submit button is clicked the search to look for stocks with in the industry and stock information from the API will be sent to the user -->
-<div id="indusSearch" class="container">
-    <form action="StocksOfIndus">
-        <label for="industryStock"><strong>Industries & Stocks:</strong></label><br>
-        <input type="text" id="industryStock" name="industryStock"><br>
-        <input type="submit" id="submitBtn">
-      </form>
+    <!-- will try and set up ajax so that when submit button is clicked the search to look for stocks with in the industry and stock information from the API will be sent to the user -->
+    <div id="companyFin" class="container">
+        <form action="companies">
+            <label for="companySearch"><strong>Company Info:</strong></label><br>
+            <input type="text" id="companySearch" name="companySearch"><br>
+            <input type="submit" id="submitBtn">
+        </form>
     </div>
 
 
@@ -59,9 +59,15 @@
 where the user would see the different stocks of that industry -->
 
     <!-- what exactly did we want the user to be able to do when clicking on the different stocks? 1.) display more in depth stock information about the industry or 2.) information about the industry itself  -->
-    <div id="listOfStock"><ul></ul></div>
+    <div id="companyList">
+        <ul></ul>
+    </div>
+    
 
     <!-- will be using Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">       
+    </script>
+    <script src="company.js"></script>
 </body>
 
 </html>
