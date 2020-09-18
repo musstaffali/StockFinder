@@ -111,14 +111,17 @@ favorited();
 
 
 function favorited() {
+    //put favorites into local storage
     // var favorites = [];
-    $(".blankstar").on("click", function (event) {
+    $("#star-rank-5").on("click", function (event) {
         event.preventDefault();
+        var compName5 = $("#compname5").val();
+        localStorage.saveData = JSON.stringify(compName5);
+        
 
+        // for (i = 0; i < 5; i++) {
 
-        for (i = 0; i < 5; i++) {
-
-            var cellRank = $("<td>").append(i++ + "<i class='fas fa-star'</i>");
+            var cellRank = $("<td>").append("<i class='fas fa-star'</i>");
             var cellCompany = $("<td>").text("");
             var cellValue = $("<td>").text("");
             var upDown = $("<td>").text("");
@@ -126,7 +129,7 @@ function favorited() {
             var tableBody = $("#faveTable");
             tableRow.append(cellRank, cellCompany, cellValue, upDown);
             tableBody.append(tableRow);
-        }
+        // }
 
 
     });
