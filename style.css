@@ -1,7 +1,7 @@
 /* the other files will be linked to this one */
 
 html {
-    Background-color: lightblue;
+    background-image: url('https://images.pexels.com/photos/2068975/pexels-photo-2068975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
 
 #indusSearch {
@@ -23,6 +23,25 @@ html {
 #termsMenu h3 {
     font-size: 110%;
     font-weight: 500;
+}
+
+#title {
+    text-align: center;
+    font-size: 300%;
+    font-weight: 500;
+    text-shadow: 3px 3px red;
+}
+
+#label {
+    font-size: 300%;
+    font-weight: 500;
+    text-shadow: 3px 3px red;
+}
+#companyList {
+    padding: 50px;
+    color:rgb(10, 190, 10);
+    font-size: 200%;
+    font-weight: 800;
 }
 .navbar-brand h1 {
     font-size: 300%;

@@ -7,9 +7,16 @@
     <title>Company Info</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
+<!--  
+    <style>
+       html{
+             background-image: url('https://previews.123rf.com/images/loskutnikov/loskutnikov1011/loskutnikov101100284/8341054-heap-of-dollars-money-background.jpg');
+         }
+     </style> -->
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <span>
@@ -52,12 +59,14 @@
             </div>
         </div>
     </nav>
-      <!-- user will type in the input box,  and the user will click submit button -->
+    <!-- user will type in the input box,  and the user will click submit button -->
+  
+    <h1 id="title">STAY IN THE KNOW!</h1>
 
     <!-- will try and set up ajax so that when submit button is clicked the search to look for stocks with in the industry and stock information from the API will be sent to the user -->
     <div id="companyFin" class="container">
         <form action="companies">
-            <label for="companySearch"><strong>Stay in the Know!</strong></label><br>
+            <label for="companySearch" id="label"><strong>What's in the news?</strong></label><br>
             <input type="text" id="companySearch" name="companySearch"><br>
             <input type="submit" id="submitBtn">
         </form>
@@ -68,9 +77,10 @@
 where the user would see the different stocks of that industry -->
 
     <!-- what exactly did we want the user to be able to do when clicking on the different stocks? 1.) display more in depth stock information about the industry or 2.) information about the industry itself  -->
+
     <div id="companyList">
-        <h1 id="title">IN THE NEWS!</h1>
         <ul></ul>
+     
     </div>
 
 

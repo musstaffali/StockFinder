@@ -29,11 +29,9 @@ $(document).ready(function () {
                 success: function (results) {
                     console.log(results);
                     searchResults = results;
-                    // console.log(results["Global Quote"]["05. price"]);
-                    // console.log(results["Global Quote"]["09. change"]);
-                    //save company name and global quote
+                
                     localStorage.saveData = JSON.stringify(results);
-                    // location.href = "results.html";
+                   
 
                     var query = "https://cloud.iexapis.com/stable/stock/" + symbol + "/news?token=pk_671c931364a84a08aae2391ce68605f7"
                     $.ajax({ url: query, method: 'GET' })
@@ -43,11 +41,13 @@ $(document).ready(function () {
                             console.log(news[0])
                             console.log(searchResults["Global Quote"]);
 
-
                             var industry = $("<a>").text("Headline/Link: " + news[0].headline);
                             var summary = $("<p>").text("Summary: " + news[0].summary);
                             industry.attr("src", news[0].url);
-                            var sym = $("<p>").text("Symbol: " + searchResults["Global Quote"]["01. symbol"]);
+                            industry.click(function () {
+                                location.href = news[0].url
+                            });
+                            var sym = $("<p>").text("Symbol: " + searchResults["Global Quote"]["01. symbol"] || searchResults["Global Quote"]["1. symbol"]);
                             var high = $("<p>").text("High: " + searchResults["Global Quote"]["03. high"]);
                             var low = $("<p>").text("Low: " + searchResults["Global Quote"]["04. low"]);
                             var price = $("<p>").text("Price: " + searchResults["Global Quote"]["05. price"]);
@@ -63,7 +63,7 @@ $(document).ready(function () {
                             display.append(summary);
 
 
-                            $('#companyList').append(display);
+                            $('#companyList').prepend(display);
 
 
                         })
