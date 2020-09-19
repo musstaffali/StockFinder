@@ -136,95 +136,8 @@ function saveFaves() {
     localStorage.saveArr = JSON.stringify(favorites);
 }
 
-
-// var imageList = [100, 200, 300, 400, 500];
-// var index = imageList.indexOf(200);
-
-// var div = document.getElementById('my_div');
-// for (let i = 0, len = g.children.length; i < len; i++) {
-//     g.children[i].onclick = function () {
-//         alert(index);
-//     }
-// }
-// var imageList = [
-//     { value: 100 },
-//     { value: 200 },
-//     { value: 300 },
-//     { value: 400 },
-//     { value: 500 }
-// ];
 var favorites = [];
-// var index = imageList.map(function (img) { return img.value; }).indexOf(200);
-// var addToObject = function (obj, key, value, index) {
-//     var temp = {};
-//     var i = 0;
-//     for (var prop in obj) {
-//         if (obj.hasOwnProperty(prop)) {
-//             if (i === index && key && value) {
-//                 temp[key] = value;
-//             }
-//             temp[prop] = obj[prop];
-//             i++
-//         }
-//     }
-//     if(!index && key && value){
-//         temp[key] = value;
-//     }
-//     return temp;
-// };
 
-// var lunch = {
-//     sandwich: 'turkey',
-//     drink: 'soda',
-//     chips: true
-// };
-// var lunchWithDessert = addToObject(lunch, 'dessert', 'cookie');
-// console.log(lunchWithDessert);
-// for (var x in lunch){
-//     console.log(x + ":" + lunch[x]);
-// }
-
-
-// var companyTwo = []
-// function makeFavorites(){
-// for (i=0; i<favorites.length; i++){
-
-
-// var compInfo = $("#compName"+ [i])[0].innerHTML;
-// var priceInfo = $("#price"+[i])[0].innerHTML;
-// var chng = $("#change")[0].innerHTML;
-// var pct = $("#upDown"+[i])[0].innerHTML;
-// companyData.push(compInfo, priceInfo, chng, pct);
-// console.log(companyData);
-// }
-// favorites.push(companyData);
-// console.log(companyData);
-
-// }
-
-// function loopCompanies(){
-//     for(i=0; i<favorites.length; i++){
-//         for (j=0; j<favorites[0].length; j++) {
-//             console.log(favorites[i][j]);
-//         }
-//     }
-// }
-
-// var chartData = [
-//     {
-//         "company": compInfo1,
-//         "price": priceInfo1,
-//         "change": chng1,
-//         "changepct": pct1,
-//     }
-//     // {
-//     //     "company": topTrendstop10[1].companyName,
-//     //     "price": topTrendstop10[1].latestPrice,
-//     //     "change": topTrendstop10[1].change,
-//     //     "changepct": topTrendstop10[1].changePercent,
-//     // }
-// ]
-// console.log(chartData);
 
 function renderFavesList() {
     $("#faveTable").empty();
@@ -376,7 +289,7 @@ $("#star-rank-5").on("click", function (event) {
 
 
 
-$(document).ready(function () {
+window.onload = (function () {
     var favesStringified = localStorage.getItem("saveArr");
     var favesList = JSON.parse(favesStringified);
     if (favesList == null) {
