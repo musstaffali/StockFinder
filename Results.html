@@ -5,15 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
     <div src="homepage.js"></div>
+    <div src="index.js"></div>
           <title>Results Page</title>
 </head>
 
 <body>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-
-
+            <span>
+                <h1 class="title" id="pageTitle">
+                    WHAT THE STOCK?
+                </h1>
+            </span>
+        </div>
+        <div class="navbar-item">
+            <span>
+                <h4 class="title" id="subtitle">
+                    All about stocks
+                </h4>
+            </span>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -21,21 +33,25 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-            <strong><div class="navbar-start">
-                <a class="navbar-item">
-                    Home
-                </a>
-                <a class="navbar-item">
-                    Results
-                </a>
-                <a class="navbar-item">
-                    Industry
-                </a>
-                <a class="navbar-item">
-                    Resources
-                </a>
-            </div></strong>
+        <div class="navbar-end">
+            <div id="navbarWhatTheStock" class="navbar-menu">
+                <strong>
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="homepage.html">
+                            Home
+                        </a>
+                        <a class="navbar-item is-active" href="Results.html">
+                            Results
+                        </a>
+                        <a class="navbar-item" href="industry.html">
+                            In The News
+                        </a>
+                        <a class="navbar-item" href="resources.html">
+                            Resources
+                        </a>
+                    </div>
+                </strong>
+            </div>
         </div>
     </nav>
 
@@ -76,38 +92,70 @@
         </div>
         <!-- middle column-->
         <div class="column is-half">
-            <h1 class="container" >Results</h1> 
-<div class="tradingview-widget-container"><a id="widget"></a>
-    <div id="tradingview_716a3"></div>
-    <div class="tradingview-widget-copyright"> by TradingView</div>
-    <script type="text/javascript"  src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-    new TradingView.widget(
-    {
-    "width": 780,
-    "height": 310,
-    "symbol": "NASDAQ:AAPL",
-    "interval": "D",
-    "timezone": "Etc/UTC",
-    "theme": "dark",
-    "style": "1",
-    "locale": "en",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "allow_symbol_change": true,
-  }
-    );
-    var name =[];
-name =JSON.parse(localStorage.getItem("saveName"));
-console.log(name);
-    </script>
-  </div>
-  <a href="./resources.js" class="button">Go to for information</a>
-
-
+            <div class="columns">
+            <div class="column">
+                name 
+              </div>
+              <div class="column">
+                symbol
+              </div>
+            </div>
+              <div class="columns">
+              <div class="column">
+                price
+              </div>
+              <div class="column">
+                name 
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column">
+                name 
+              </div>
+               <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                </div>
+                <div class="columns">
+                <div class="column">
+                    name 
+                  </div>
+                  <div class="column">
+                    name 
+                  </div>
+                </div>
+                
         </head>
+        
+            </div>
+            
 
-        </div>
 
                 <!-- Right side of the screen/trending -->
                 <div class="column is-one-quarter">
@@ -207,7 +255,8 @@ console.log(name);
             </div>
         </section>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="homepage.js"></script>
+        <!--<script type="text/javascript" src="homepage.js"></script>-->
+        <script type="text/javascript" src="index.js"></script>
                 </div>
                            
                     
