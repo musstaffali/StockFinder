@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resources</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -44,7 +45,7 @@
                             Results
                         </a>
                         <a class="navbar-item" href="industry.html">
-                            Industry
+                            In The News
                         </a>
                         <a class="navbar-item is-active" href="resources.html">
                             Resources
@@ -135,10 +136,15 @@
                                 <th>Company</th>
                                 <th>Symbol</th>
                                 <th>Price</tn>
-                                <th>Change</th>
                                 <th title="UpDown">
                                     <i class="fas fa-sort-amount-up"></i>
                                     <i class="fas fa-sort-amount-down"></i>
+                                ($)
+                                </th>
+                                <th title="UpDown">
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                (%)
                                 </th>
                             </tr>
                         </thead>
@@ -235,15 +241,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!--JAVASCRIPT FOR HOMEPAGE REFERENCED HERE FOR SIMILAR CONTENT-->
-    <script type="text/javascript" src="homepage.js"></script>
-    <!--SINCE THERE ARE ONLY A FEW LINES OF JAVASCRIPT FOR THIS PAGE IT WILL NOT REQUIRE A SEPARATE FILE.-->
-    <script type="text/javascript">
-        //THIS FUNCTION RUNS THE DEFINITIONS AREA ACCORDION ACTION.
-        $(function () {
-            $("#termsMenu").accordion();
-        });
-    </script>
+    <script type="text/javascript" src="resources.js"></script>
+
+
 </body>
 
 </html>
