@@ -49,7 +49,7 @@
                             Results
                         </a>
                         <a class="navbar-item is-active" href="industry.html">
-                            Industry
+                            IIn The News
                         </a>
                         <a class="navbar-item" href="resources.html">
                             Resources
@@ -82,6 +82,101 @@ where the user would see the different stocks of that industry -->
         <ul></ul>
      
     </div>
+    <h2 class="subtitle is-3">Today's Top Trending</h2>
+                    <table id="table-1" class="table is-striped is-bordered is-fullwidth is-hoverable">
+                        <thead>
+                            <tr>
+                                <th title="Header">Rank</th>
+                                <th>Company</th>
+                                <th>Symbol</th>
+                                <th>Price</tn>
+                                <th>Change</th>
+                                <th title="UpDown">
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="trendBody">
+                            <tr id="row-1">
+                                <th>1
+                                    <i id="star-rank-1" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName1"></td>
+                                <td id="compSymb1"></td>
+                                <td id="price1"></td>
+                                <td id="change1" class="changes"></td>
+                                <td id="upDown1" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>2
+                                    <i id="star-rank-2" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName2"></td>
+                                <td id="compSymb2"></td>
+                                <td id="price2"></td>
+                                <td id="change2" class="changes"></td>
+                                <td id="upDown2" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>3
+                                    <i id="star-rank-3" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName3"></td>
+                                <td id="compSymb3"></td>
+                                <td id="price3"></td>
+                                <td id="change3" class="changes"></td>
+                                <td id="upDown3" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>4
+                                    <i id="star-rank-4" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName4"></td>
+                                <td id="compSymb4"></td>
+                                <td id="price4"></td>
+                                <td id="change4" class="changes"></td>
+                                <td id="upDown4" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>5
+                                    <i id="star-rank-5" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName5"></td>
+                                <td id="compSymb5"></td>
+                                <td id="price5"></td>
+                                <td id="change5" class="changes"></td>
+                                <td id="upDown5" class="upDownPct"></td>
+                            </tr>
+                    </table>
+                    <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
+                    <!--MY FAVORITES TABLE FROM HOMEPAGE HTML-->
+                    <h2 class="subtitle is-3">My Favorited Stocks</h2>
+                    <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
+                        <thead>
+                            <tr>
+                                <th title="Header">Rank</th>
+                                <th>Company</th>
+                                <th>Value</th>
+                                <th title="UpDown">
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="faveTable">
+                        </tbody>
+                    </table>
 
 
     <!-- will be using Jquery -->
