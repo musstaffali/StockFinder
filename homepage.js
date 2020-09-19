@@ -12,23 +12,8 @@ function getTopTrending() {
     }).then(function (topTrendstop10) {
         console.log(topTrendstop10);
 
-        var tagName = document.getElementsByTagName("tr");
-        var i;
-        for (i=0; i<tagName.length; i++){
-            (i+1)+tagName[i].rowIndex
-            console.log("The Index of Row"+(i+1)+" is:"+tagName[i].rowIndex);
-        };
-
-        
-        
-        // var topArrays = 
-        // [{compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"},
-        // {compName:"John", compSymbol:"Doe", price:50, change:"blue"}];
         //TOP TRENDING COL 1
-        
+
         $("#compName1").text(topTrendstop10[0].companyName);
         $("#compSymb1").text(topTrendstop10[0].symbol);
         $("#price1").text("$" + topTrendstop10[0].latestPrice);
@@ -70,9 +55,24 @@ function getTopTrending() {
             $(".upDownPct").css("color", "red");
         }
 
+
     });
 }
 getTopTrending();
+
+
+
+
+function setIndexRows() {
+
+    var tagName = document.getElementsByTagName("tr");
+    var i;
+    for (i = 0; i < tagName.length; i++) {
+        (i + 1) + tagName[i].rowIndex
+        console.log("The Index of Row" + (i + 1) + " is:" + tagName[i].rowIndex);
+    };
+}
+setIndexRows();
 
 
 $(".button").on("click", function (event) {
@@ -132,34 +132,142 @@ function getStocks(searchTerm) {
 
 //When a blank star is clicked, the data will be moved to the favorites table and appended
 
-function saveData(){
-    localStorage.saveArr = JSON.stringify(favorites);
+// function saveData() {
+//     localStorage.saveArr = JSON.stringify(favorites);
+// }
+
+
+// var imageList = [100, 200, 300, 400, 500];
+// var index = imageList.indexOf(200);
+
+// var div = document.getElementById('my_div');
+// for (let i = 0, len = g.children.length; i < len; i++) {
+//     g.children[i].onclick = function () {
+//         alert(index);
+//     }
+// }
+// var imageList = [
+//     { value: 100 },
+//     { value: 200 },
+//     { value: 300 },
+//     { value: 400 },
+//     { value: 500 }
+// ];
+var favorites = [];
+// var index = imageList.map(function (img) { return img.value; }).indexOf(200);
+var addToObject = function (obj, key, value, index) {
+    var temp = {};
+    var i = 0;
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            if (i === index && key && value) {
+                temp[key] = value;
+            }
+            temp[prop] = obj[prop];
+            i++
+        }
+    }
+    if(!index && key && value){
+        temp[key] = value;
+    }
+    return temp;
+};
+
+var lunch = {
+    sandwich: 'turkey',
+    drink: 'soda',
+    chips: true
+};
+var lunchWithDessert = addToObject(lunch, 'dessert', 'cookie');
+console.log(lunchWithDessert);
+for (var x in lunch){
+    console.log(x + ":" + lunch[x]);
 }
 
-var favorites = [];
+var companyOne = []  
+function makeFavorites(){
+  
+var compInfo = $("#compName1")[0].innerHTML;
+var priceInfo = $("#price1")[0].innerHTML;
+var chng = $("#change1")[0].innerHTML;
+var pct = $("#upDown1")[0].innerHTML;
+companyOne.push(compInfo, priceInfo, chng, pct);
+console.log(companyOne);
+favorites.push(companyOne);
+console.log(favorites);
+}
 
+function loopCompanies(){
+    for(i=0; i<favorites.length; i++){
+        for (j=0; j<favorites[0].length; j++) {
+            console.log(favorites[i][j]);
+        }
+    }
+}
+
+// var chartData = [
+//     {
+//         "company": compInfo1,
+//         "price": priceInfo1,
+//         "change": chng1,
+//         "changepct": pct1,
+//     }
+//     // {
+//     //     "company": topTrendstop10[1].companyName,
+//     //     "price": topTrendstop10[1].latestPrice,
+//     //     "change": topTrendstop10[1].change,
+//     //     "changepct": topTrendstop10[1].changePercent,
+//     // }
+// ]
+// console.log(chartData);
+
+
+// function saveArray(){
+//     for(var i=0; i < favorites.length; i++) {
+//         company = []
+//         //name
+//         var compInfo = $("#compName")[i].innerHTML;
+//         company.push(compInfo);
+//         //price
+//         var priceInfo = $("#price")[i].innerHTML;
+//         company.push(priceInfo);
+//         //change
+//         var chng = $("#change")[i].innerHTML;
+//         company.push(chng);
+//         //percentage
+//         var pct = $("#upDown")[i].innerHTML;
+//         company.push(pct);
+//         //push to favorites
+//         favorites.push(company);
+//         console.log(favorites);
+//     }
+// }
 
 $("#star-rank-1").on("click", function (event) {
     event.preventDefault();
-
-    company1 = []
-    //name
-    var compInfo1 = $("#compName1")[0].innerHTML;
-    company1.push(compInfo1);
-    //price
-    var priceInfo1 = $("#price1")[0].innerHTML;
-    company1.push(priceInfo1);
-    //change
-    var chng1 = $("#change1")[0].innerHTML;
-    company1.push(chng1);
-    //percentage
-    var pct1 = $("#upDown1")[0].innerHTML;
-    company1.push(pct1);
-    //push to favorites
-    favorites.push(company1);
-    console.log(favorites);
-    saveData();
+    makeFavorites();
+    loopCompanies();
+    // saveArray();
+    // company1 = []
+    // //name
+    // var compInfo1 = $("#compName1")[0].innerHTML;
+    // company1.push(compInfo1);
+    // //price
+    // var priceInfo1 = $("#price1")[0].innerHTML;
+    // company1.push(priceInfo1);
+    // //change
+    // var chng1 = $("#change1")[0].innerHTML;
+    // company1.push(chng1);
+    // //percentage
+    // var pct1 = $("#upDown1")[0].innerHTML;
+    // company1.push(pct1);
+    // //push to favorites
+    // favorites.push(company1);
+    // console.log(favorites);
+    // // saveData();
 });
+
+
 
 $("#star-rank-2").on("click", function (event) {
     event.preventDefault();
@@ -179,7 +287,7 @@ $("#star-rank-2").on("click", function (event) {
     //push to favorites
     favorites.push(company2);
     console.log(favorites);
-    saveData();
+    // saveData();
 });
 
 $("#star-rank-3").on("click", function (event) {
@@ -200,7 +308,7 @@ $("#star-rank-3").on("click", function (event) {
     //push to favorites
     favorites.push(company3);
     console.log(favorites);
-    saveData();
+    // saveData();
 });
 
 $("#star-rank-4").on("click", function (event) {
