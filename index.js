@@ -1,28 +1,28 @@
 // var saveData = localStorage.getItem("saveData")
 loadSaveData();
-function loadSaveData(){
-var saveData = JSON.parse(localStorage.getItem('saveData')) || [];
-console.log(saveData);
-var saveName = JSON.parse(localStorage.getItem('saveName')) || [];
+function loadSaveData() {
+    var saveData = JSON.parse(localStorage.getItem('saveData')) || [];
+    console.log(saveData);
+    var saveName = JSON.parse(localStorage.getItem('saveName')) || [];
 
-console.log(saveName);
-console.log(saveName["1. symbol"]);
-console.log(saveData["Global Quote"]["05. price"]);
-$("#searchName").text(saveName["2. name"] || saveName["02. name"]);
-$("#searchSymb").text(saveName["1. symbol"] || saveName["01. symbol"]);
-$("#searchPrice").text("$" + saveData["Global Quote"]["05. price"] || saveData["Global Quote"]["5. price"]);
-$("#searchRegion").text(saveName["4. region"]);
+    console.log(saveName);
+    console.log(saveName["1. symbol"]);
+    console.log(saveData["Global Quote"]["05. price"] || saveData["Global Quote"]["5. price"]);
+    $("#searchName").text(saveName["2. name"] || saveName["02. name"]);
+    $("#searchSymb").text(saveName["1. symbol"] || saveName["01. symbol"]);
+    $("#searchPrice").text("$" + saveData["Global Quote"]["05. price"] || saveData["Global Quote"]["5. price"]);
+    $("#searchRegion").text(saveName["4. region"]);
 
-$("#searchType").text(saveName["3. type"]);
-$("#searchCurr").text(saveName["8. currency"]);
-$("#searchVol").text(saveData["Global Quote"]["06. volume"] || saveData["Global Quote"]["6. volume"]);
+    $("#searchType").text(saveName["3. type"]);
+    $("#searchCurr").text(saveName["8. currency"]);
+    $("#searchVol").text(saveData["Global Quote"]["06. volume"] || saveData["Global Quote"]["6. volume"]);
 
-$("#searchOpen").text("$" + saveData["Global Quote"]["02. open"] || saveData["Global Quote"]["2. open"]);
-$("#searchHigh").text("$" + saveData["Global Quote"]["03. high"] || saveData["Global Quote"]["3. high"]);
-$("#searchLow").text("$" + saveData["Global Quote"]["04. low"] || saveData["Global Quote"]["4. low"]);
-$("#searchChange").text("$" + saveData["Global Quote"]["09. change"] || saveData["Global Quote"]["9. change"]);
-$("#searchPercent").text(saveData["Global Quote"]["10. change percent"]);
-}
+    $("#searchOpen").text("$" + saveData["Global Quote"]["02. open"] || saveData["Global Quote"]["2. open"]);
+    $("#searchHigh").text("$" + saveData["Global Quote"]["03. high"] || saveData["Global Quote"]["3. high"]);
+    $("#searchLow").text("$" + saveData["Global Quote"]["04. low"] || saveData["Global Quote"]["4. low"]);
+    $("#searchChange").text("$" + saveData["Global Quote"]["09. change"] || saveData["Global Quote"]["9. change"]);
+    $("#searchPercent").text(saveData["Global Quote"]["10. change percent"]);
+};
 
 
 var APIkey = "LMLYK2TEYEV7H4G5";
@@ -83,3 +83,65 @@ function getTopTrending() {
     });
 }
 getTopTrending();
+
+function getStocks(searchTerm) {
+    var querySearchURL = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=" + searchTerm + "&apikey=LMLYK2TEYEV7H4G5";
+    console.log(querySearchURL);
+    jQuery.ajax({
+        url: querySearchURL,
+        method: "GET"
+    }).then(function (data) {
+        console.log(data);
+        console.log(data.bestMatches[0]);
+        var symbol = data.bestMatches[0]["1. symbol"];
+        console.log(symbol);
+        localStorage.saveName = JSON.stringify(data.bestMatches[0]);
+
+        var symbol = data.bestMatches[0]["1. symbol"];
+        var queryCompanyURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&apikey=LMLYK2TEYEV7H4G5";
+        jQuery.ajax({
+            url: queryCompanyURL,
+            dataType: 'json',
+            contentType: "application/json",
+            success: function (results) {
+                console.log(results);
+
+                //save company name and global quote
+                localStorage.saveData = JSON.stringify(results);
+                // location.href = "results.html";
+                $("#searchPrice").text("$" + results["Global Quote"]["05. price"] || results["Global Quote"]["5. price"]);
+                $("#searchVol").text(results["Global Quote"]["06. volume"] || results["Global Quote"]["6. volume"]);
+                
+
+            }
+        });
+        var queryNewsURL = "https://cloud.iexapis.com/stable/stock/" + symbol + "/news?token=pk_671c931364a84a08aae2391ce68605f7";
+        console.log(queryNewsURL);
+        jQuery.ajax({
+            url: queryNewsURL,
+            method: "GET"
+        }).then(function (indData) {
+            console.log(indData);
+        });
+        $("#searchName").text(data.bestMatches[0]["2. name"]);
+        $("#searchSymb").text(data.bestMatches[0]["1. symbol"]);
+        $("#searchRegion").text(data.bestMatches[0]["4. region"]);
+        $("#searchType").text(data.bestMatches[0]["3. type"]);
+        $("#searchCurr").text(data.bestMatches[0]["8. currency"]);
+    })
+
+};
+
+$(".button").on("click", function (event) {
+    event.preventDefault();
+    var searchTerm = $("#searchTerm")
+        .val()
+        .trim()
+    // .toLowerCase();
+    $("#searchTerm").val("");
+    console.log(searchTerm);
+
+    getStocks(searchTerm);
+    // getIndustry();
+
+})
