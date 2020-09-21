@@ -2,8 +2,21 @@ var APIkey = "LMLYK2TEYEV7H4G5";
 var queryCompanyURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + searchTerm + "&apikey=LMLYK2TEYEV7H4G5";
 var querySearchURL = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=" + searchTerm + "&apikey=LMLYK2TEYEV7H4G5";
 // var queryIndURL = "https://cloud.iexapis.com/stable/stock/market/collection/sector?collectionName=" + searchTerm + "?token=pk_671c931364a84a08aae2391ce68605f7";
-
-
+renderSavedFaves();
+function renderSavedFaves(){
+    var saveArr = JSON.parse(localStorage.getItem('saveArr')) || [];
+    console.log(saveArr[0].name);
+    for (i = 0; i < saveArr.length; i++) {
+        var cellRank = $("<td>").append("<i class='fas fa-star'</i>");
+        var cellCompany = $("<td>").text(saveArr[i].name);
+        var cellPrice = $("<td>").text(saveArr[i].price);
+        var cellChange = $("<td>").text(saveArr[i].change);
+        var upDown = $("<td>").text(saveArr[i].percent);
+        tableRow = $("<tr>");
+        tableRow.append(cellRank, cellCompany, cellPrice, cellChange, upDown);
+        $("#table-2").append(tableRow);
+    }
+};
 function getTopTrending() {
     var queryTopURL = "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=pk_671c931364a84a08aae2391ce68605f7"
     $.ajax({
@@ -124,6 +137,7 @@ function getStocks(searchTerm) {
             method: "GET"
         }).then(function (indData) {
             console.log(indData);
+            localStorage.saveNews = JSON.stringify(indData);
         });
     })
 
@@ -140,7 +154,7 @@ var favorites = [];
 
 
 function renderFavesList() {
-    $("#faveTable").empty();
+    // $("#faveTable").empty();
     console.log(favorites);
     for (i = 0; i < favorites.length; i++) {
         var cellRank = $("<td>").append("<i class='fas fa-star'</i>");

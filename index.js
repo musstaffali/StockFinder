@@ -19,9 +19,9 @@ function loadSaveData() {
     var saveData = JSON.parse(localStorage.getItem('saveData')) || [];
     console.log(saveData);
     var saveName = JSON.parse(localStorage.getItem('saveName')) || [];
-
     var saveArr = JSON.parse(localStorage.getItem('saveArr')) || [];
-
+    var saveNews = JSON.parse(localStorage.getItem('saveNews')) || [];
+    console.log(saveNews);
     console.log(saveArr);
     console.log(saveName);
     console.log(saveName["1. symbol"]);
@@ -57,7 +57,48 @@ function loadSaveData() {
         $(".colorChange").css("color", "red");
     }
 
+    //post 3 recent news articles
+    var industry = $("<a>").text(saveNews[0].headline);
+                            industry.addClass("headlineText");
+                            var industryone = $("<a>").text(saveNews[1].headline);
+                            industryone.addClass("headlineText");
+                            var industrytwo = $("<a>").text(saveNews[2].headline);
+                            industrytwo.addClass("headlineText");
+                            var industrythr = $("<a>").text(saveNews[3].headline);
+                            industrythr.addClass("headlineText");
 
+                            var summary = $("<p>").text(saveNews[0].summary);
+                            summary.addClass("mb-4");
+                            var summaryone = $("<p>").text(saveNews[1].summary);
+                            summaryone.addClass("mb-4");
+                            var summarytwo = $("<p>").text(saveNews[2].summary);
+                            summarytwo.addClass("mb-4");
+                            var summarythr = $("<p>").text(saveNews[3].summary);
+                            summarythr.addClass("mb-4");
+
+                            industry.attr("src", saveNews[0].url);
+                            industry.click(function () {
+                                location.href = saveNews[0].url
+                            });
+                            industryone.attr("src", saveNews[1].headline);
+                            industryone.click(function () {
+                                location.href = saveNews[1].url
+                            });
+                            industrytwo.attr("src", saveNews[2].url);
+                            industrytwo.click(function () {
+                                location.href = saveNews[2].url
+                            });
+                            industrythr.attr("src", saveNews[3].url);
+                            industrythr.click(function () {
+                                location.href = saveNews[3].url
+                            });
+    
+                            
+                            var display = $("<div>").addClass("card-content");
+
+
+                            display.append(industry, summary, industryone, summaryone, industrytwo, summarytwo, industrythr, summarythr);
+                            $('#newsCard').append(display);
 };
 
 
