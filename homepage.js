@@ -5,16 +5,22 @@ var querySearchURL = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&k
 renderSavedFaves();
 function renderSavedFaves(){
     var saveArr = JSON.parse(localStorage.getItem('saveArr')) || [];
-    console.log(saveArr[0].name);
     for (i = 0; i < saveArr.length; i++) {
         var cellRank = $("<td>").append("<i class='fas fa-star'</i>");
         var cellCompany = $("<td>").text(saveArr[i].name);
         var cellPrice = $("<td>").text(saveArr[i].price);
         var cellChange = $("<td>").text(saveArr[i].change);
         var upDown = $("<td>").text(saveArr[i].percent);
+        upDown.addClass("pctChange");
         tableRow = $("<tr>");
         tableRow.append(cellRank, cellCompany, cellPrice, cellChange, upDown);
         $("#table-2").append(tableRow);
+    }
+    var upDownC = $(".pctChange").val();
+    if (upDownC >= 0) {
+        $(".pctChange").css("color", "green");
+    } else {
+        $(".pctChange").css("color", "red");
     }
 };
 function getTopTrending() {
@@ -72,8 +78,6 @@ function getTopTrending() {
     });
 }
 getTopTrending();
-
-
 
 
 function setIndexRows() {
@@ -166,69 +170,47 @@ function renderFavesList() {
         tableRow.append(cellRank, cellCompany, cellPrice, cellChange, upDown);
         $("#faveTable").append(tableRow);
         var percentColor = cellChange.innerHTML;
-        if (percentColor >= 0) {
-            $(".upDownFav").css("color", "green");
-        } else {
-            $(".upDownFav").css("color", "red");
-        }
+
     };
-    
+    if (percentColor >= 0) {
+        $(".upDownFav").css("color", "green");
+    } else {
+        $(".upDownFav").css("color", "red");
+    }
 };
 
 
 $("#star-rank-1").on("click", function (event) {
     event.preventDefault();
-    // makeFavorites();
-    // loopCompanies();
-    // saveArray();
-    // company1 = []
     var companyUno = new Object();
     console.log(companyUno);
-    //name
     var compInfo1 = $("#compName1")[0].innerHTML;
-    // company1.push(compInfo1);
     companyUno.name = compInfo1;
-    //price
     var priceInfo1 = $("#price1")[0].innerHTML;
     companyUno.price = priceInfo1;
-    // company1.push(priceInfo1);
-    //change
     var chng1 = $("#change1")[0].innerHTML;
     companyUno.change = chng1;
-    // company1.push(chng1);
-    //percentage
     var pct1 = $("#upDown1")[0].innerHTML;
     companyUno.percent = pct1;
-    // company1.push(pct1);
-    //push to favorites
-    // console.log(company1);
     favorites.push(companyUno);
     saveFaves();
     renderFavesList();
-
 });
 
 
 
 $("#star-rank-2").on("click", function (event) {
     event.preventDefault();
-    // makeFavorites();
-    // loopCompanies();
     var company2 = new Object();
     console.log(company2);
-    //name
     var compInfo2 = $("#compName2")[0].innerHTML;
     company2.name = compInfo2;
-    //price
     var priceInfo2 = $("#price2")[0].innerHTML;
     company2.price = priceInfo2;
-    //change
     var chng2 = $("#change2")[0].innerHTML;
     company2.change = chng2;
-    //percentage
     var pct2 = $("#upDown2")[0].innerHTML;
     company2.percent = pct2;
-    //push to favorites
     favorites.push(company2);
     console.log(favorites);
     saveFaves();
@@ -238,19 +220,14 @@ $("#star-rank-2").on("click", function (event) {
 $("#star-rank-3").on("click", function (event) {
     event.preventDefault();
     var company3 = new Object();
-    //name
     var compInfo3 = $("#compName3")[0].innerHTML;
     company3.name = compInfo3;
-    //price
     var priceInfo3 = $("#price3")[0].innerHTML;
     company3.price = priceInfo3;
-    //change
     var chng3 = $("#change3")[0].innerHTML;
     company3.change = chng3;
-    //percentage
     var pct3 = $("#upDown3")[0].innerHTML;
     company3.percent = pct3;
-    //push to favorites
     favorites.push(company3);
     console.log(favorites);
     saveFaves();
@@ -260,19 +237,14 @@ $("#star-rank-3").on("click", function (event) {
 $("#star-rank-4").on("click", function (event) {
     event.preventDefault();
     company4 = new Object();
-    //name
     var compInfo4 = $("#compName4")[0].innerHTML;
     company4.name = compInfo4;
-    //price
     var priceInfo4 = $("#price4")[0].innerHTML;
     company4.price = priceInfo4;
-    //change
     var chng4 = $("#change4")[0].innerHTML;
     company4.change = chng4;
-    //percentage
     var pct4 = $("#upDown4")[0].innerHTML;
     company4.percent = pct4;
-    //push to favorites
     favorites.push(company4);
     console.log(favorites);
     saveFaves();
@@ -282,19 +254,14 @@ $("#star-rank-4").on("click", function (event) {
 $("#star-rank-5").on("click", function (event) {
     event.preventDefault();
     company5 = new Object();
-    //name
     var compInfo5 = $("#compName5")[0].innerHTML;
     company5.name = compInfo5;
-    //price
     var priceInfo5 = $("#price5")[0].innerHTML;
     company5.price = priceInfo5;
-    //change
     var chng5 = $("#change5")[0].innerHTML;
     company5.change = chng5;
-    //percentage
     var pct5 = $("#upDown5")[0].innerHTML;
     company5.percent = pct5;
-    //push to favorites
     favorites.push(company5);
     console.log(favorites);
     saveFaves();

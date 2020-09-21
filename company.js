@@ -8,9 +8,16 @@ $(document).ready(function () {
             var cellCompany = $("<td>").text(saveArr[i].name);
             var cellPrice = $("<td>").text(saveArr[i].price);
             var upDown = $("<td>").text(saveArr[i].percent);
+            upDown.addClass("pctChange");
             tableRow = $("<tr>");
             tableRow.append(cellRank, cellCompany, cellPrice,upDown);
             $("#table-2").append(tableRow);
+        }
+        var upDownC = $(".pctChange").val();
+        if (upDownC >= 0) {
+            $(".pctChange").css("color", "green");
+        } else {
+            $(".pctChange").css("color", "red");
         }
     };
    

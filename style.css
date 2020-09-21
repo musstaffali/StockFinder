@@ -2,6 +2,10 @@ html {
     background-image: url('lilypads.png');
 }
 
+#infoBox {
+    margin-right: 50px;
+}
+
 #indusSearch {
     background-color: greenyellow;
     margin: 20px;

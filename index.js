@@ -8,9 +8,16 @@ function renderSavedFaves(){
         var cellCompany = $("<td>").text(saveArr[i].name);
         var cellPrice = $("<td>").text(saveArr[i].price);
         var upDown = $("<td>").text(saveArr[i].percent);
+        upDown.addClass("pctChange")
         tableRow = $("<tr>");
         tableRow.append(cellRank, cellCompany, cellPrice,upDown);
         $("#table-2").append(tableRow);
+    }
+    var upDownC = $(".pctChange").val();
+    if (upDownC >= 0) {
+        $(".pctChange").css("color", "green");
+    } else {
+        $(".pctChange").css("color", "red");
     }
 };
 
@@ -103,9 +110,6 @@ function loadSaveData() {
 
 
 var APIkey = "LMLYK2TEYEV7H4G5";
-//var queryCompanyURL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + searchTerm + "&apikey=LMLYK2TEYEV7H4G5";
-//var querySearchURL = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=" + searchTerm + "&apikey=LMLYK2TEYEV7H4G5";
-
 
 function getTopTrending() {
     var queryTopURL = "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=pk_671c931364a84a08aae2391ce68605f7"
