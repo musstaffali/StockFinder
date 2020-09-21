@@ -72,3 +72,21 @@ html {
     font-size: 20px;
     font-weight: 500;
 }
+
+.definitionsArea {
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+.resourceArea {
+    background-color: white;
+    padding-left: 5px;
+}
+.topTrendTable {
+    background-color: white;
+    padding-left: 5px;
+}
+.myFaveTable {
+    background-color: white;
+    padding-left: 5px;
+}
