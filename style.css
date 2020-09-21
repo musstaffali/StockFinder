@@ -1,0 +1,76 @@
+html {
+    background-image: url('lilypads.png');
+}
+
+#infoBox {
+    margin-right: 50px;
+}
+
+#indusSearch {
+    background-color: greenyellow;
+    margin: 20px;
+    text-align: left;
+    }
+    
+#industryStock {
+    margin: 10px;
+   
+    text-align: left;
+}
+
+/* #submitBtn {
+    margin: 5px;
+} */
+
+#termsMenu h3 {
+    font-size: 110%;
+    font-weight: 500;
+}
+
+#title {
+    text-align: center;
+    font-size: 300%;
+    font-weight: 500;
+    text-shadow: 3px 3px red;
+}
+
+#label {
+    font-size: 300%;
+    font-weight: 500;
+    text-shadow: 3px 3px red;
+}
+.headlineText{
+    font-size: 130%;
+}
+.priceColor {
+    color: green;
+}
+.navbar-brand h1 {
+    font-size: 300%;
+    font-weight: 500;
+}
+.navbar-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.navbar-item {
+    margin-left: 10px;
+}
+
+.navbar-brand h1 {
+    font-size: 300%;
+    font-weight: 500;
+}
+.navbar-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; 
+}
+.navbar-item {
+    margin-left: 10px;
+}
+
+#list-item {
+    font-size: 20px;
+    font-weight: 500;
+}

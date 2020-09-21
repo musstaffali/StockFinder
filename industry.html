@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Company Info</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <span>
+                <h1 class="title" id="pageTitle">
+                    WHAT THE STOCK?
+                </h1>
+            </span>
+        </div>
+        <div class="navbar-item">
+            <span>
+                <h4 class="title" id="subtitle">
+                    All about stocks
+                </h4>
+            </span>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div id="navbarWhatTheStock" class="navbar-menu">
+                <strong>
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="homepage.html">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="Results.html">
+                            Results
+                        </a>
+                        <a class="navbar-item is-active" href="industry.html">
+                            In The News
+                        </a>
+                        <a class="navbar-item" href="resources.html">
+                            Resources
+                        </a>
+                    </div>
+                </strong>
+            </div>
+        </div>
+    </nav>
+    <!-- user will type in the input box,  and the user will click submit button -->
+
+    <section id="companyFin" class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 id="title">STAY IN THE KNOW!</h1>
+                    <br>
+
+                    <!-- will try and set up ajax so that when submit button is clicked the search to look for stocks with in the industry and stock information from the API will be sent to the user -->
+
+                    <div action="companies">
+                        <label for="companySearch" class="subtitle is-5"><strong>What's in the news?</strong></label>
+                        <div class="level">
+                            <input class="input is-primary" type="text" id="companySearch" name="companySearch"
+                                placeholder="Search for a company"><button type="submit" id="submitBtn"
+                                class="button is-primary"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="card text-is-centered" id="companyList">
+                        
+
+                    </div>
+                </div>
+
+                <div class="column-is-two-fifths">
+
+                    <h2 class="subtitle is-3">Today's Top Trending</h2>
+                    <table id="table-1" class="table is-striped is-bordered is-hoverable">
+
+                        <thead>
+                            <tr>
+                                <th title="Header">Rank</th>
+                                <th>Company</th>
+
+                                <th>Price</tn>
+
+                                <th title="UpDown">
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                    (%)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="trendBody">
+                            <tr id="row-1">
+                                <th>1
+                                    <i id="star-rank-1" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+
+                                </th>
+                                <td id="compName1"></td>
+                                <td id="price1"></td>
+                                <td id="upDown1" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>2
+                                    <i id="star-rank-2" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName2"></td>
+                                <td id="price2"></td>
+                                <td id="upDown2" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>3
+                                    <i id="star-rank-3" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName3"></td>
+                                <td id="price3"></td>
+                                <td id="upDown3" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>4
+                                    <i id="star-rank-4" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName4"></td>
+                                <td id="price4"></td>
+                                <td id="upDown4" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>5
+                                    <i id="star-rank-5" class="blankstar far fa-star"
+                                        onmouseover="this.className = 'fas fa-star'" ;
+                                        onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName5"></td>
+                                <td id="price5"></td>
+                                <td id="upDown5" class="upDownPct"></td>
+                            </tr>
+                    </table>
+                    <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
+
+                    <div class="column">
+                        <h2 class="subtitle is-3">My Favorited Stocks</h2>
+
+                        <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <i class='fas fa-star'></i> 
+                                    </th>
+                                    <th title="Header">Company</th>
+                                    <th>Price</th>
+                                    <th title="UpDown">
+                                        <i class="fas fa-sort-amount-up"></i>
+                                        <i class="fas fa-sort-amount-down"></i>
+                                        (%)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="faveTable">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- will be using Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="company.js"></script>
+</body>
+
+</html>
