@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <span>
+                <h1 class="title" id="pageTitle">
+                    WHAT THE STOCK?
+                </h1>
+            </span>
+        </div>
+        <div class="navbar-item">
+            <span>
+                <h4 class="title" id="subtitle">
+                    All about stocks
+                </h4>
+            </span>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div id="navbarWhatTheStock" class="navbar-menu">
+                <strong>
+                    <div class="navbar-start">
+                        <a class="navbar-item is-active" href="homepage.html">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="Results.html">
+                            Results
+                        </a>
+                        <a class="navbar-item" href="industry.html">
+                            In the News
+                        </a>
+                        <a class="navbar-item" href="resources.html">
+                            Resources
+                        </a>
+                    </div>
+                </strong>
+            </div>
+        </div>
+    </nav>
+    <!--END NAV BAR-->
+    <section class="section">
+        <div class="container">
+            <h1 class="title" id="#about">
+                ABOUT OUR APPLICATION
+            </h1>
+            <p class="subtitle">
+                We wanted to create an all-in-one applicaton that would deliver stock prices, market information, and relevant news articles based a user-chosen company. We executed this project using Bulma, a CSS framework based on flexbox, and 3 API's from Alpha Vantage and IEX Cloud. Type in a company name below and try it out for yourself!
+            </p>
+            <div class=row>
+                <div class="level">
+                    <input id="searchTerm" class="input is-primary" type="text" placeholder="Search for a company or industry">
+                    <button id="#search-button"class="button is-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <h2 class="subtitle is-3">Today's Top Trending</h2>
+                    <table id="table-1" class="table is-striped is-bordered is-fullwidth is-hoverable">
+
+                        <thead>
+                            <tr>
+                                <th title="Header">Rank</th>
+                                <th>Company</th>
+                                <th>Symbol</th>
+                                <th>Price</tn>
+                                <th>
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                    ($)
+                                </th>
+                                <th title="UpDown">
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                    (%)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="trendBody">
+                            <tr id="row-1">
+                                <th>1
+                                    <i id="star-rank-1" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                            
+                                </th>
+                                <td id="compName1"></td>
+                                <td id="compSymb1"></td>
+                                <td id="price1"></td>
+                                <td id="change1" class="changes"></td>
+                                <td id="upDown1" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>2
+                                    <i id="star-rank-2" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName2"></td>
+                                <td id="compSymb2"></td>
+                                <td id="price2"></td>
+                                <td id="change2" class="changes"></td>
+                                <td id="upDown2" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>3
+                                    <i id="star-rank-3" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName3"></td>
+                                <td id="compSymb3"></td>
+                                <td id="price3"></td>
+                                <td id="change3" class="changes"></td>
+                                <td id="upDown3" class="upDownPct"></td>
+                            </tr>
+                            <tr>
+                                <th>4
+                                    <i id="star-rank-4" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName4"></td>
+                                <td id="compSymb4"></td>
+                                <td id="price4"></td>
+                                <td id="change4" class="changes"></td>
+                                <td id="upDown4" class="upDownPct"></td>
+                            </tr>
+                            <tr id="company-info-5">
+                                <th>5
+                                    <i id="star-rank-5" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
+                                </th>
+                                <td id="compName5" class="comp-Name"></td>
+                                <td id="compSymb5"></td>
+                                <td id="price5"></td>
+                                <td id="change5" class="changes"></td>
+                                <td id="upDown5" class="upDownPct"></td>
+                            </tr>
+                    </table>
+                    <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
+                </div>
+                <div class="column">
+                    <h2 class="subtitle is-3">My Favorited Stocks</h2>
+
+                    <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
+                        <thead>
+                            <tr>
+                                <th title="Header">
+                                    <i class='fas fa-star'></i>
+                                </th>
+                                <th>Company</th>
+                                <th>Price</th>
+                                <th>
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                    ($)
+                                </th>
+                                <th title="UpDown">
+                                    <i class="fas fa-sort-amount-up"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                    (%)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="faveTable">
+
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="homepage.js"></script>
+     
+</body>
+
+</html>
