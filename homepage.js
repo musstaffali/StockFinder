@@ -146,17 +146,7 @@ function getStocks(searchTerm) {
     })
 
 };
-
-
-//When a blank star is clicked, the data will be moved to the favorites table and appended
-
-function saveFaves() {
-    localStorage.saveArr = JSON.stringify(favorites);
-}
-
 var favorites = [];
-
-
 function renderFavesList() {
     // $("#faveTable").empty();
     console.log(favorites);
@@ -268,6 +258,9 @@ $("#star-rank-5").on("click", function (event) {
     renderFavesList();
 });
 
+function saveFaves() {
+    localStorage.saveArr = JSON.stringify(favorites);
+}
 
 
 window.onload = (function () {

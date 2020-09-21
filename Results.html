@@ -58,86 +58,89 @@
     <section class="section">
         <div class=container>
             <div class="columns">
+                <div class="column">
+
+                    <div id="infoBox" class="box">
+                        <div class="level">
+                            <input id="searchTerm" class="input is-primary" type="text"
+                                placeholder="Search for a company">
+                            <button id="#search-button" class="button is-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <p id="lastSearched"></p>
+                        <div class="section">
 
 
-                <div id="infoBox" class="box">
-                    <div class="level">
-                        <input id="searchTerm" class="input is-primary" type="text" placeholder="Search for a company">
-                        <button id="#search-button" class="button is-primary">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <p id="lastSearched"></p>
-                    <div class="section">
+                            <div class="columns has-text-centered">
 
+                                <i id="blankStar" class="blankstar far fa-star"
+                                    onmouseover="this.className = 'fas fa-star'" ;
+                                    onmouseout="this.className='far fa-star'"></i>
 
-                        <div class="columns has-text-centered">
-                            
-                                <i id="blankStar" class="blankstar far fa-star" onmouseover="this.className = 'fas fa-star'"; onmouseout="this.className='far fa-star'"></i>
-                         
-                            <div id="searchName" class="column title">
+                                <div id="searchName" class="column title">
 
-                            </div>
-                             </div>
-                             <div class="columns has-text-centered">
-                            <div id="searchSymb" class="column title">
-
-                            </div>
-
-                       </div>
-                        <div class="columns has-text-centered">
-                            <div class="column">
-                                <div id="searchPrice" class="subtitle is-4">
                                 </div>
                             </div>
-                            <div class="column">
-                                <div id="searchRegion" class="subtitle is-4" class="column"></div>
-                            </div>
-                        </div>
-                        <div class="columns has-text-centered">
-                            <div class="column">
-                                <div id="searchType" class="subtitle column"></div>
-                            </div>
-                            <div class="column">
-                                <div id="searchCurr" class="subtitle column"></div>
-                            </div>
-                            <div class="column">
-                                <div id="searchVol" class="subtitle column"></div>
-                            </div>
-                        </div>
-                        <table id="dataTable" class="table is-bordered is-fullwidth text-is-centered">
-                            <thead>
-                                <tr>
-                                    <th id="o"></th>
-                                    <th id="hi"></th>
-                                    <th id="lo"></th>
-                                    <th id="chng"></th>
-                                    <th id="chngP"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td id="searchOpen"></td>
-                                    <td id="searchHigh"></td>
-                                    <td id="searchLow"></td>
-                                    <td class="colorChange" id="searchChange"></td>
-                                    <td class="colorChange" id="searchPercent"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="columns">
-
-                            <div class="column">
-                                <h1 id="newsResults" class="subtitle"></h1>
-                                <div id="newsCard" class="card">
+                            <div class="columns has-text-centered">
+                                <div id="searchSymb" class="column title">
 
                                 </div>
 
+                            </div>
+                            <div class="columns has-text-centered">
+                                <div class="column">
+                                    <div id="searchPrice" class="subtitle is-4">
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div id="searchRegion" class="subtitle is-4" class="column"></div>
+                                </div>
+                            </div>
+                            <div class="columns has-text-centered">
+                                <div class="column">
+                                    <div id="searchType" class="subtitle column"></div>
+                                </div>
+                                <div class="column">
+                                    <div id="searchCurr" class="subtitle column"></div>
+                                </div>
+                                <div class="column">
+                                    <div id="searchVol" class="subtitle column"></div>
+                                </div>
+                            </div>
+                            <table id="dataTable" class="table is-bordered is-fullwidth text-is-centered">
+                                <thead>
+                                    <tr>
+                                        <th id="o"></th>
+                                        <th id="hi"></th>
+                                        <th id="lo"></th>
+                                        <th id="chng"></th>
+                                        <th id="chngP"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="searchOpen"></td>
+                                        <td id="searchHigh"></td>
+                                        <td id="searchLow"></td>
+                                        <td class="colorChange" id="searchChange"></td>
+                                        <td class="colorChange" id="searchPercent"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="columns">
+
+                                <div class="column">
+                                    <h1 id="newsResults" class="subtitle"></h1>
+                                    <div id="newsCard" class="card">
+
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Right side of the screen/trending -->
                 <div class="column-is-two-fifths">
 
@@ -167,9 +170,9 @@
 
                                 </th>
                                 <td id="compName1"></td>
-                              
+
                                 <td id="price1"></td>
-                               
+
                                 <td id="upDown1" class="upDownPct"></td>
                             </tr>
                             <tr>
