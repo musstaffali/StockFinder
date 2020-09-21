@@ -14,9 +14,9 @@ html {
     text-align: left;
 }
 
-#submitBtn {
+/* #submitBtn {
     margin: 5px;
-}
+} */
 
 #termsMenu h3 {
     font-size: 110%;
@@ -35,11 +35,11 @@ html {
     font-weight: 500;
     text-shadow: 3px 3px red;
 }
-#companyList {
-    padding: 50px;
-    color:rgb(4, 255, 16);
-    font-size: 200%;
-    font-weight: 800;
+.headlineText{
+    font-size: 130%;
+}
+.priceColor {
+    color: green;
 }
 .navbar-brand h1 {
     font-size: 300%;

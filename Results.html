@@ -61,17 +61,13 @@
 
 
                 <div class="column">
-                    <h1 id="title">STAY IN THE KNOW!</h1>
-                    <br>
-
                     <div class="level">
                         <input id="searchTerm" class="input is-primary" type="text" placeholder="Search for a company">
                         <button id="#search-button" class="button is-primary">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-
-
+                    <p id="lastSearched"></p>
                     <div class="section">
 
 
@@ -103,7 +99,7 @@
                                 <div id="searchVol" class="subtitle column"></div>
                             </div>
                         </div>
-                        <table is="dataTable" class="table is-bordered is-fullwidth text-is-centered">
+                        <table id="dataTable" class="table is-bordered is-fullwidth text-is-centered">
                             <thead>
                                 <tr>
                                     <th id="o"></th>
@@ -141,11 +137,13 @@
                             </div>
                         </div> -->
                         <div class="columns">
-                            <div id="graph" class="column">
-                                graph
-                            </div>
+
                             <div class="column">
-                                inTheNews
+                                <h1 id="newsResults" class="subtitle"></h1>
+                                <div id="newsCard" class="card">
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -242,8 +240,8 @@
                         <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
                             <thead>
                                 <tr>
-                                    <th title="Header">Rank</th>
-                                    <th>Company</th>
+                                    <th title="Header">Company</th>
+                                    <th>Price</th>
                                     <th>Value</th>
                                     <th title="UpDown">
                                         <i class="fas fa-sort-amount-up"></i>

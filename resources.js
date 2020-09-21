@@ -1,3 +1,18 @@
+renderSavedFaves();
+function renderSavedFaves(){
+    var saveArr = JSON.parse(localStorage.getItem('saveArr')) || []; 
+    console.log(saveArr[0].name);
+    for (i = 0; i < saveArr.length; i++) {
+        var cellRank = $("<td>").append("<i class='fas fa-star'</i>");
+        var cellCompany = $("<td>").text(saveArr[i].name);
+        var cellPrice = $("<td>").text(saveArr[i].price);
+        var upDown = $("<td>").text(saveArr[i].percent);
+        tableRow = $("<tr>");
+        tableRow.append(cellRank, cellCompany, cellPrice,upDown);
+        $("#table-2").append(tableRow);
+    }
+};
+
 function getTopTrending() {
     var queryTopURL = "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=pk_671c931364a84a08aae2391ce68605f7"
     $.ajax({
@@ -8,37 +23,27 @@ function getTopTrending() {
 
         //TOP TRENDING COL 1
         $("#compName1").text(topTrendstop10[0].companyName);
-        // $("#compSymb1").text(topTrendstop10[0].symbol);
         $("#price1").text("$" + topTrendstop10[0].latestPrice);
-        // $("#change1").text(topTrendstop10[0].change);
         $("#upDown1").text((topTrendstop10[0].changePercent * 100).toFixed(2) + "%");
 
         //TOP TRENDING COL 2
         $("#compName2").text(topTrendstop10[1].companyName);
-        // $("#compSymb2").text(topTrendstop10[1].symbol);
         $("#price2").text("$" + topTrendstop10[1].latestPrice);
-        // $("#change2").text(topTrendstop10[1].change);
         $("#upDown2").text((topTrendstop10[1].changePercent * 100).toFixed(2) + "%");
 
         //TOP TRENDING COL 3
         $("#compName3").text(topTrendstop10[2].companyName);
-        // $("#compSymb3").text(topTrendstop10[2].symbol);
         $("#price3").text("$" + topTrendstop10[2].latestPrice);
-        // $("#change3").text(topTrendstop10[2].change);
         $("#upDown3").text((topTrendstop10[2].changePercent * 100).toFixed(2) + "%");
 
         //TOP TRENDING COL 4
         $("#compName4").text(topTrendstop10[3].companyName);
-        // $("#compSymb4").text(topTrendstop10[3].symbol);
         $("#price4").text("$" + topTrendstop10[3].latestPrice);
-        // $("#change4").text(topTrendstop10[3].change);
         $("#upDown4").text((topTrendstop10[3].changePercent * 100).toFixed(2) + "%");
 
         //TOP TRENDING COL 5
         $("#compName5").text(topTrendstop10[4].companyName);
-        // $("#compSymb5").text(topTrendstop10[4].symbol);
         $("#price5").text("$" + topTrendstop10[4].latestPrice);
-        // $("#change5").text(topTrendstop10[4].change);
         $("#upDown5").text((topTrendstop10[4].changePercent * 100).toFixed(2) + "%");
 
         var upDownC = $(".upDownPct").val();

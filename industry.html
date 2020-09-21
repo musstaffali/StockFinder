@@ -75,16 +75,9 @@
                         </div>
                     </div>
 
+                    <div class="card text-is-centered" id="companyList">
+                        
 
-
-                    <!-- trying to make this "<div id="Indus&Stock"><ul></ul></div>""
-where the user would see the different stocks of that industry -->
-
-                    <!-- what exactly did we want the user to be able to do when clicking on the different stocks? 1.) display more in depth stock information about the industry or 2.) information about the industry itself  -->
-
-
-                    <div id="companyList">
-                        <ul></ul>
                     </div>
                 </div>
 
@@ -116,9 +109,7 @@ where the user would see the different stocks of that industry -->
 
                                 </th>
                                 <td id="compName1"></td>
-                                <!-- <td id="compSymb1"></td> -->
                                 <td id="price1"></td>
-                                <!-- <td id="change1" class="changes"></td> -->
                                 <td id="upDown1" class="upDownPct"></td>
                             </tr>
                             <tr>
@@ -128,9 +119,7 @@ where the user would see the different stocks of that industry -->
                                         onmouseout="this.className='far fa-star'"></i>
                                 </th>
                                 <td id="compName2"></td>
-                                <!-- <td id="compSymb2"></td> -->
                                 <td id="price2"></td>
-                                <!-- <td id="change2" class="changes"></td> -->
                                 <td id="upDown2" class="upDownPct"></td>
                             </tr>
                             <tr>
@@ -140,9 +129,7 @@ where the user would see the different stocks of that industry -->
                                         onmouseout="this.className='far fa-star'"></i>
                                 </th>
                                 <td id="compName3"></td>
-                                <!-- <td id="compSymb3"></td> -->
                                 <td id="price3"></td>
-                                <!-- <td id="change3" class="changes"></td> -->
                                 <td id="upDown3" class="upDownPct"></td>
                             </tr>
                             <tr>
@@ -152,9 +139,7 @@ where the user would see the different stocks of that industry -->
                                         onmouseout="this.className='far fa-star'"></i>
                                 </th>
                                 <td id="compName4"></td>
-                                <!-- <td id="compSymb4"></td> -->
                                 <td id="price4"></td>
-                                <!-- <td id="change4" class="changes"></td> -->
                                 <td id="upDown4" class="upDownPct"></td>
                             </tr>
                             <tr>
@@ -164,9 +149,7 @@ where the user would see the different stocks of that industry -->
                                         onmouseout="this.className='far fa-star'"></i>
                                 </th>
                                 <td id="compName5"></td>
-                                <!-- <td id="compSymb5"></td> -->
                                 <td id="price5"></td>
-                                <!-- <td id="change5" class="changes"></td> -->
                                 <td id="upDown5" class="upDownPct"></td>
                             </tr>
                     </table>
@@ -178,12 +161,15 @@ where the user would see the different stocks of that industry -->
                         <table id="table-2" class="table is-bordered is-striped is-fullwidth is-hoverable">
                             <thead>
                                 <tr>
-                                    <th title="Header">Rank</th>
-                                    <th>Company</th>
-                                    <th>Value</th>
+                                    <th>
+                                        <i class='fas fa-star'></i> 
+                                    </th>
+                                    <th title="Header">Company</th>
+                                    <th>Price</th>
                                     <th title="UpDown">
                                         <i class="fas fa-sort-amount-up"></i>
                                         <i class="fas fa-sort-amount-down"></i>
+                                        (%)
                                     </th>
                                 </tr>
                             </thead>
