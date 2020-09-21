@@ -1,6 +1,11 @@
+//THIS FUNCTION RUNS THE DEFINITIONS AREA ACCORDION ACTION.
+$(function () {
+    $("#termsMenu").accordion();
+});
+
 renderSavedFaves();
-function renderSavedFaves(){
-    var saveArr = JSON.parse(localStorage.getItem('saveArr')) || []; 
+function renderSavedFaves() {
+    var saveArr = JSON.parse(localStorage.getItem('saveArr')) || [];
     console.log(saveArr[0].name);
     for (i = 0; i < saveArr.length; i++) {
         var cellRank = $("<td>").append("<i class='fas fa-star'</i>");
@@ -9,7 +14,7 @@ function renderSavedFaves(){
         var upDown = $("<td>").text(saveArr[i].percent);
         upDown.addClass("pctChange");
         tableRow = $("<tr>");
-        tableRow.append(cellRank, cellCompany, cellPrice,upDown);
+        tableRow.append(cellRank, cellCompany, cellPrice, upDown);
         $("#table-2").append(tableRow);
     }
     var upDownC = $(".pctChange").val();
